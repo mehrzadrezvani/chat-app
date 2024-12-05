@@ -6,8 +6,10 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
+import { useAuthStore } from "./store/useAuthStore";
 
 const App = () => {
+  const { authUser, checkAuth } = useAuthStore();
   return (
     <div>
       <Navbar />
@@ -17,7 +19,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/settings" element={<SettingsPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
-    </Routes>
+      </Routes>
     </div>
   );
 };
